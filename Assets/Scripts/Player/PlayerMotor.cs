@@ -39,6 +39,15 @@ public class PlayerMotor : MonoBehaviour
                 lerpCrouch = false;
                 crouchTimer = 0f;
             }
+
+            if (crouching)
+            {
+                speed = 2f;
+            }
+            else
+            {
+                speed = 5f;
+            }
         }
     }
 

@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private Transform bulletSpawn; 
     [SerializeField]
-    private float bulletSpeed = 50f; 
+    private float bulletSpeed = 35f; 
     [SerializeField]
     private float fireRate = 0.2f; 
     private float nextFireTime = 0f; 

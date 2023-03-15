@@ -44,8 +44,8 @@ public class PlayerHealth : MonoBehaviour
         {
             backHealthbar.color = Color.green;
             backHealthbar.fillAmount = hFraction;
-            lerpTimer = +Time.deltaTime;
-            float percentComplete = lerpTimer/chipSpeed;
+            lerpTimer += Time.deltaTime;
+            float percentComplete = lerpTimer / chipSpeed;
             percentComplete = percentComplete * percentComplete;
             frontHealthbar.fillAmount = Mathf.Lerp(fillF, backHealthbar.fillAmount, percentComplete);
         }
@@ -56,23 +56,10 @@ public class PlayerHealth : MonoBehaviour
             health -= damage;
             lerpTimer = 0f;
         }
-    
+
     public void RestoreHealth(float healAmount)
     {
         health += healAmount;
         lerpTimer = 0f;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Heal"))
-        {
-            RestoreHealth(10f);
-        }
-        else if (other.gameObject.CompareTag("Damage"))
-        {
-            TakeDamage(10f);
-            Destroy(other.gameObject);
-        }
     }
 }

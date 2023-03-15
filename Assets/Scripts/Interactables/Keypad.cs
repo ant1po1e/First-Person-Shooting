@@ -22,12 +22,5 @@ public class Keypad : Interactable
     {
         doorOpen = !doorOpen;
         door.GetComponent<Animator>().SetBool("IsOpen", doorOpen);
-
-        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(10f);
-            Debug.Log("damage");
-        }
     }
 }
